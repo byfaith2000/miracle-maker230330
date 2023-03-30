@@ -752,7 +752,43 @@ Q 어떨때 scatter쓰고 어떨때
 
 연습1
 
+Q1
+랜덤에서 seed의 의미는 무엇인가요
 
+
+Q3
+np.random.seed(12345)
+arr = np.random.randn(5,6)
+print(arr)
+print()
+
+아래 코드 한번 더 설명부탁드립니다. 
+
+print(arr[np.argsort(arr[:,0])])  #4. 첫 번째 열 값으로 모든 행으로 정렬
+
+print(arr[:, np.argsort(arr[1])]) #5. 두네 번째 행 값으로 모든 열의 정렬
+
+Q3 
+Day3>dataloadingEx2
+
+import pandas as pd
+import numpy as np
+
+chunker = pd.read_csv('ex6.csv', chunksize=1000)
+print(chunker)
+print()
+
+tot = pd.Series([], dtype=np.float64)
+
+for piece in chunker:
+    tot = tot.add(piece['key'].value_counts(), fill_value=0)
+
+tot = tot.sort_values(ascending=False)
+print(tot[:10])
+
+
+Q4
+stack, unstack
 
 
 
