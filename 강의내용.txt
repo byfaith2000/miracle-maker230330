@@ -818,3 +818,10 @@ Process finished with exit code 1
 
 
 
+pdata = welfare.pivot_table(index='성별', columns='결혼유무', values='나이', aggfunc='mean')
+print(pdata)
+print()
+
+sns.heatmap(data=pdata, annot=True)
+plt.show()
+
