@@ -825,3 +825,27 @@ print()
 sns.heatmap(data=pdata, annot=True)
 plt.show()
 
+
+
+
+
+C:\Users\byfai\PycharmProjects\bigdata_lecture\Day5\dataAnalysisEx2.py:89: FutureWarning: pivot_table dropped a column because it failed to aggregate. This behavior is deprecated and will raise in a future version of pandas. Select only the columns that can be aggregated.
+  pdata = welfare.pivot_table(index='성별', columns='결혼 유무', values='나이', aggfunc='mean')
+Traceback (most recent call last):
+  File "C:\Users\byfai\PycharmProjects\bigdata_lecture\Day5\dataAnalysisEx2.py", line 93, in <module>
+    sns.heatmap(data=pdata, annot=True)
+  File "C:\Users\byfai\PS\bigdata_lec\lib\site-packages\seaborn\matrix.py", line 446, in heatmap
+    plotter = _HeatMapper(data, vmin, vmax, cmap, center, robust, annot, fmt,
+  File "C:\Users\byfai\PS\bigdata_lec\lib\site-packages\seaborn\matrix.py", line 163, in __init__
+    self._determine_cmap_params(plot_data, vmin, vmax,
+  File "C:\Users\byfai\PS\bigdata_lec\lib\site-packages\seaborn\matrix.py", line 202, in _determine_cmap_params
+    vmin = np.nanmin(calc_data)
+  File "<__array_function__ internals>", line 200, in nanmin
+  File "C:\Users\byfai\PS\bigdata_lec\lib\site-packages\numpy\lib\nanfunctions.py", line 343, in nanmin
+    res = np.fmin.reduce(a, axis=axis, out=out, **kwargs)
+ValueError: zero-size array to reduction operation fmin which has no identity
+
+Process finished with exit code 1
+
+
+
