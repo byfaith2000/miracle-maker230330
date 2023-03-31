@@ -876,5 +876,12 @@ sns.pair
 
 # sns.violinplot(data=welfare, x='성별', y='나이', hue='종교유무')
 # plt.show()
+====================
+Empty DataFrame
+Columns: []
+Index: [1, 2]
+
+C:\Users\byfai\PycharmProjects\bigdata_lecture\Day5\dataAnalysisEx2.py:89: FutureWarning: pivot_table dropped a column because it failed to aggregate. This behavior is deprecated and will raise in a future version of pandas. Select only the columns that can be aggregated.
+  pdata = welfare.pivot_table(index='성별', columns='결혼 유무', values='나이', aggfunc='mean')
 
 
