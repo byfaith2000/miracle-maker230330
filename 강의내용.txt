@@ -901,4 +901,41 @@ Data columns (total 9 columns):
 dtypes: float64(2), int64(3), object(4)
 memory usage: 588.2+ KB
 
+===================================
+Q1
+랜덤에서 seed의 의미는 무엇인가요
+
+
+Q3
+아래 코드 한번 더 설명부탁드립니다.
+=========================
+np.random.seed(12345)
+arr = np.random.randn(5,6)
+print(arr)
+print()
+
+
+print(arr[np.argsort(arr[:,0])])  
+
+print(arr[:, np.argsort(arr[1])]) 
+
+Q3 
+Day3>dataloadingEx2
+
+chunker도 한번 더 설명 부탁드려요~
+===========================
+import pandas as pd
+import numpy as np
+
+chunker = pd.read_csv('ex6.csv', chunksize=1000)
+print(chunker)
+print()
+
+tot = pd.Series([], dtype=np.float64)
+
+for piece in chunker:
+    tot = tot.add(piece['key'].value_counts(), fill_value=0)
+
+tot = tot.sort_values(ascending=False)
+print(tot[:10])
 
