@@ -847,5 +847,34 @@ ValueError: zero-size array to reduction operation fmin which has no identity
 
 Process finished with exit code 1
 
+================
+
+import seaborn as sns
+
+# sns.countplot(data=welfare, x='결혼 유무', order=['결혼', '이혼', '무응답'], hue='종교 유무')
+# plt.show()
+#
+# sns.countplot(data=welfare, y='결혼 유무', order=['결혼', '이혼', '무응답'], hue='종교 유무')
+# plt.show()
+
+pdata = welfare.pivot_table(index='성별', columns='결혼 유무', values='나이', aggfunc='mean')
+print(pdata)
+print()
+
+sns.heatmap(data=pdata, annot=True)
+plt.show()
+
+# nwelfare = welfare.loc[:, ['직업 코드', '소득', '나이']]
+# sns.pairplot(data=nwelfare)
+# plt.show()
+
+nwelfare = welfare.loc[:, ['직업코드', '소득', '나이', '결혼유무']]
+sns.pair
+
+
+
+
+# sns.violinplot(data=welfare, x='성별', y='나이', hue='종교유무')
+# plt.show()
 
 
